@@ -1,0 +1,12 @@
+# trainer/trainer.yml
+# Project/automated-attendance-system/facial_recognisition_model/trainer/trainer.yml
+# facial_recognisition_model/trainer/trainer.yml
+trainer.yml
+**/trainer.yml
+
+# Large / generated
+**/*.yml
+**/*.pt
+**/*.pth
+**/*.h5
+

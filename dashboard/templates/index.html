@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <h1>Face Recognition Attendance Dashboard</h1>
+
+    <div class="controls">
+        <input type="text" id="nameFilter" placeholder="Search by name">
+        <input type="date" id="dateFilter">
+    </div>
+
+    <div style="text-align:center;">
+        <a href="/logout">Logout</a>
+    </div>
+
+    
+    <table id="attendanceTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <h2 style="text-align:center; margin-top:40px;">Attendance Summary</h2>
+
+    <table id="summaryTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Classes Attended</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
