@@ -1,40 +1,37 @@
-# Automated Attendance System
+# Face Recognition Based Attendance System with Web Dashboard
 
-An automated attendance system designed to reduce manual effort, improve accuracy, and streamline attendance tracking using software-based identification and logging techniques.
+## 📌 Project Overview
+This project is an **Intelligent Face Recognition–Based Attendance System** that automatically records student attendance using computer vision and displays the data on a secure web dashboard.
 
-This project is intended for academic use and demonstrates practical application of programming, data handling, and system design concepts.
-
----
-
-## Features
-
-- Automated attendance marking
-- Eliminates manual register-based tracking
-- Reduces human error and proxy attendance
-- Scalable for classrooms or organizations
-- Modular and extensible design
+The system eliminates manual attendance, reduces proxy attendance, and provides faculty with a centralized platform to view and manage attendance records.
 
 ---
 
-## Tech Stack
-
-- **Programming Language:** Python  
-- **Libraries / Frameworks:**  
-  - NumPy  
-  - OpenCV 
-  - Pandas  
-- **Version Control:** Git & GitHub  
-
-> Note: Exact libraries may vary depending on implementation.
+## 🎯 Objectives
+- To automate attendance using **face recognition**
+- To reduce manual effort and proxy attendance
+- To store attendance records digitally with timestamps
+- To provide a **secure web-based dashboard** for faculty
+- To demonstrate integration of **AI + Backend + Web Technologies**
 
 ---
 
-## Project Structure
+## 🧠 Technologies Used
 
-├── trainer/trainer.yml
-├── dataset/
-├── face_capture.py
-├── face_train.py
-├── face_recognize.py
-├── README.md
-└── .gitignore
+### 🔹 Artificial Intelligence / ML
+- OpenCV
+- LBPH (Local Binary Pattern Histogram) Face Recognition
+
+### 🔹 Backend
+- Python
+- Flask (REST API + Sessions)
+
+### 🔹 Frontend
+- HTML
+- CSS
+- JavaScript
+
+### 🔹 Data Storage
+- CSV file (attendance records)
+
+---
