@@ -1,7 +1,11 @@
 import cv2 
 import os
 
-cam = cv2.VideoCapture(0)
+#! cam = cv2.VideoCapture(1)
+cam = cv2.VideoCapture(1, cv2.CAP_DSHOW)
+cam.set(3, 640)   # width
+cam.set(4, 480)   # height
+
 face_detector = cv2.CascadeClassifier( 
     cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
 )
@@ -13,10 +17,12 @@ dataset_path = f"Project/automated-attendance-system/facial_recognisition_model/
 os.makedirs(dataset_path, exist_ok=True)
 
 count = 0
+max_images = 80
 
 while True:
     ret, img = cam.read()
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    gray = cv2.equalizeHist(gray)
     faces = face_detector.detectMultiScale(gray, 1.3, 5)
 
     for (x, y, w, h) in faces:
@@ -31,8 +37,8 @@ while True:
 
     if cv2.waitKey(50) & 0xFF == ord('q'):
         break
-    elif count >= 100:
-        break
+    elif count >= max_images:
+        break   
 
 cam.release()
 cv2.destroyAllWindows()
