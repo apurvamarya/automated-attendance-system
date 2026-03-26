@@ -17,7 +17,7 @@ dataset_path = f"Project/automated-attendance-system/facial_recognisition_model/
 os.makedirs(dataset_path, exist_ok=True)
 
 count = 0
-max_images = 80
+max_images = 40
 
 while True:
     ret, img = cam.read()
