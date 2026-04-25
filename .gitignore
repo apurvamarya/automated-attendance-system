@@ -7,5 +7,7 @@ trainer.yml
 **/*.pt
 **/*.pth
 **/*.h5
+**/*.jpg
+**/*.jpeg
 
 
