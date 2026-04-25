@@ -25,12 +25,12 @@ while True:
     gray = cv2.equalizeHist(gray)
     faces = face_detector.detectMultiScale(gray, 1.3, 5)
 
-    for (x, y, w, h) in faces:
+    for (x, y, w, h) in faces[:1]:
+        face_crop = gray[y:y+h, x:x+w]
+        if cv2.Laplacian(face_crop, cv2.CV_64F).var() < 50:  # skip blurry frames
+            continue
         count += 1
-        cv2.imwrite(
-            f"{dataset_path}/{count}.jpg",
-            gray[y:y+h, x:x+w]
-        )
+        cv2.imwrite(f"{dataset_path}/{count}.jpg", face_crop)
         cv2.rectangle(img, (x,y), (x+w,y+h), (255,0,0), 2)
 
     cv2.imshow("Face Capture", img)

@@ -1,12 +1,2 @@
-0:Aakarsh Singh
-1:Apurvam Arya
-2:Ayushi Rai
-3:Dhruv Sehrawat
-4:Khushi Sani
-5:Mahi
-6:Mayank
-7:Mudit Pandey
-8:Nishant Raghav
-9:Pratham Agarwal
-10:Rajvir Bhimwal
-11:Satyarata Behera
+0:Apurvam Arya
+1:Mudit Pandey

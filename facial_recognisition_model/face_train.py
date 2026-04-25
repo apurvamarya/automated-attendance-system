@@ -18,25 +18,13 @@ def process_image(data):
     img = Image.open(image_path).convert('L')
     img_np = np.array(img, 'uint8')
     img_np = cv2.equalizeHist(img_np)
+    face = cv2.resize(img_np, (100, 100))
 
-    detected_faces = face_detector.detectMultiScale(img_np)
-
-    results = []
-    for (x, y, w, h) in detected_faces:
-        face = img_np[y:y+h, x:x+w]
-        results.append((face, label))
-
-    return results
+    return [(face, label)]
 
 
 def main():
     recognizer = cv2.face.LBPHFaceRecognizer_create()
-    # recognizer = cv2.face.LBPHFaceRecognizer_create(
-    #     radius=2,
-    #     neighbors=16,
-    #     grid_x=8,
-    #     grid_y=8
-    # )
 
     image_data = []
     label_map = {}
