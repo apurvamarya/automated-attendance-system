@@ -1,6 +1,5 @@
 trainer.yml
 **/trainer.yml
-/dataset
 
 # Large / generated
 **/*.yml
