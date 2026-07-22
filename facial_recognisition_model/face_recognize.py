@@ -22,7 +22,10 @@ face_cascade = cv2.CascadeClassifier(
     cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
 )
 
-cam = cv2.VideoCapture(1, cv2.CAP_DSHOW)
+cam = cv2.VideoCapture(0)
+if not cam.isOpened():
+    print("Error: Could not open camera.")
+    exit()
 cam.set(3, 640)
 cam.set(4, 480)
 

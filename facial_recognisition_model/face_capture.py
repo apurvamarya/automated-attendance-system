@@ -2,7 +2,10 @@ import cv2
 import os
 
 #! cam = cv2.VideoCapture(1)
-cam = cv2.VideoCapture(1, cv2.CAP_DSHOW)
+cam = cv2.VideoCapture(0)
+if not cam.isOpened():
+    print("Error: Could not open camera.")
+    exit()
 cam.set(3, 640)   # width
 cam.set(4, 480)   # height
 
@@ -10,10 +13,12 @@ face_detector = cv2.CascadeClassifier(
     cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
 )
 
-student_id = input("Enter Student ID: ")
-student_name = input("Enter Student Name: ")
+student_id = input("Enter Student ID: ").strip()
+student_name = input("Enter Student Name: ").strip()
 
-dataset_path = f"Project/automated-attendance-system/facial_recognisition_model/dataset/{student_name}"
+# Create folder named as <student_id>_<student_name> (spaces in name -> underscores)
+folder_name = f"{student_id}_{student_name}".replace(" ", "_")
+dataset_path = f"Project/automated-attendance-system/facial_recognisition_model/dataset/{folder_name}"
 os.makedirs(dataset_path, exist_ok=True)
 
 count = 0
